@@ -3,12 +3,37 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^9.4.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@udecode/cn": "^40.2.8",
+    "@udecode/plate": "^40.2.9",
+    "@udecode/plate-basic-marks": "^40.0.0",
+    "@udecode/plate-block-quote": "^40.0.0",
+    "@udecode/plate-common": "^40.2.8",
+    "@udecode/plate-heading": "^40.2.6",
+    "@udecode/plate-list": "^40.0.0",
+    "@udecode/plate-table": "^40.0.0",
+    "@udecode/plate-ui-toolbar": "^21.5.1",
+    "ckeditor5": "^44.0.0",
+    "ckeditor5-premium-features": "^44.0.0",
+    "html-to-image": "^1.11.11",
+    "html-to-pdfmake": "^2.5.17",
+    "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.9.0",
+    "jodit-react": "^4.1.2",
+    "jspdf": "^2.5.2",
+    "notice-generator": "file:",
+    "pdfmake": "^0.2.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
+    "slate": "^0.110.2",
+    "slate-dom": "^0.111.0",
+    "slate-history": "^0.110.3",
+    "slate-hyperscript": "^0.100.0",
+    "slate-react": "^0.111.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,5 +59,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "ajv": "^7.2.4"
   }
 }
