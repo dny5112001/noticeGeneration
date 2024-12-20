@@ -37,7 +37,7 @@ const Placements = () => {
       <html>
         <head>
           <style>
-              body {
+            body {
               font-family: Arial, sans-serif;
               padding: 20px;
               margin: 0;
@@ -85,16 +85,14 @@ const Placements = () => {
             .fromto{
               float:right;
               margin-rigth:20px;
-              }
-
-            .main_body{
-            display:flex;
-            flex-direction:column;
-            gap:10px;
             }
-
-           .footerImage{
-           margin-top:80px;
+            .main_body{
+              display:flex;
+              flex-direction:column;
+              gap:10px;
+            }
+            .footerImage{
+              margin-top:80px;
             }
           </style>
         </head>
@@ -106,7 +104,6 @@ const Placements = () => {
             <p><strong>Date:</strong> ${formData.date}</p>
           </div>
           <div class="main_body">
-
             <p><strong>To:</strong> ${formData.to}</p>
             <p><strong>Subject:</strong> ${formData.subject}</p>
             <p>Intro here${formData.Intro}</p>
@@ -131,8 +128,6 @@ const Placements = () => {
             }</p>
             <p><strong>Note:</strong> ${formData.Note}</p>
           </div>
-
-
           <div class="notice-content">
             <div class="content-body">${previewContent}</div>
           </div>
@@ -140,14 +135,11 @@ const Placements = () => {
             <p>${formData.From}</p>
             <p> ${formData.From_designation}</p>
           </div>
-         
-
-         ${
-           copytoimage
-             ? `<img src="${copytoimage}" alt="Header" class="footerImage" />`
-             : ""
-         }
-
+          ${
+            copytoimage
+              ? `<img src="${copytoimage}" alt="Header" class="footerImage" />`
+              : ""
+          }
         </body>
       </html>
     `);
@@ -156,37 +148,65 @@ const Placements = () => {
   };
 
   return (
-    <div style={{ padding: "30px 200px" }}>
-      <h2>NOTICE DETAILS : PLACEMENTS</h2>
-      <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+    <div
+      style={{
+        padding: "30px",
+        maxWidth: "800px",
+        margin: "0 auto",
+        fontFamily: "Arial, sans-serif",
+        backgroundColor: "#fff",
+        borderRadius: "8px",
+        boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+      }}
+    >
+      <h2
+        style={{
+          textAlign: "center",
+          color: "#333",
+          marginBottom: "20px",
+        }}
+      >
+        NOTICE DETAILS : PLACEMENTS
+      </h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+          gap: "20px",
+        }}
+      >
         {Object.keys(formData).map((key) => (
-          <input
+          <div
             key={key}
-            type={key === "date" ? "date" : "text"}
-            name={key}
-            value={formData[key]}
-            onChange={handleInputChange}
-            placeholder={key.replace(/_/g, " ").toUpperCase()}
-            style={{
-              borderWidth: 1,
-              borderColor: "black",
-              borderStyle: "solid",
-              padding: 10,
-              borderRadius: 5,
-            }}
-          />
+            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+          >
+            <label
+              htmlFor={key}
+              style={{
+                marginBottom: "5px",
+                fontWeight: "bold",
+                color: "#555",
+              }}
+            >
+              {key.replace(/_/g, " ").toUpperCase()}:
+            </label>
+            <input
+              type={key === "date" ? "date" : "text"}
+              id={key}
+              name={key}
+              value={formData[key]}
+              onChange={handleInputChange}
+              style={{
+                borderWidth: 1,
+                borderColor: "#ccc",
+                borderStyle: "solid",
+                padding: "10px",
+                borderRadius: "4px",
+                fontSize: "14px",
+              }}
+            />
+          </div>
         ))}
-      </div>
-      <div style={{ marginTop: "20px" }}>
-        <JoditEditor
-          ref={editor}
-          value={content}
-          config={{
-            height: 300,
-            readonly: false,
-          }}
-          onBlur={(newContent) => setContent(newContent)}
-        />
       </div>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <button
@@ -194,10 +214,16 @@ const Placements = () => {
           style={{
             marginTop: "20px",
             padding: "10px 25px",
-            border: "1px solid grey",
+            border: "none",
             borderRadius: "5px",
-            backgroundColor: "#fff",
+            backgroundColor: "#4CAF50",
+            color: "white",
+            fontSize: "16px",
+            cursor: "pointer",
+            transition: "background-color 0.3s",
           }}
+          onMouseOver={(e) => (e.target.style.backgroundColor = "#45a049")}
+          onMouseOut={(e) => (e.target.style.backgroundColor = "#4CAF50")}
         >
           Print Content
         </button>

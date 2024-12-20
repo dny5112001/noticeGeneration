@@ -4,8 +4,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Placements from "./Components/Placements";
 import Internship from "./Components/Internship";
 import Pli from "./Components/Pli";
-import InfrastuctureBooking from "./Components/InfrastuctureBooking";
 import DutyChart from "./Components/DutyChart";
+import PlacementsTable from "./Components/PlacementsTable";
+import InternshipTable from "./Components/InternshipTable";
+import PliTable from "./Components/PliTable";
+import InfrastructureBooking from "./Components/InfrastuctureBooking";
 
 const App = () => {
   return (
@@ -15,30 +18,45 @@ const App = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/template1">Template 1</Link>
+              <Link to="/placements">Placements</Link>
             </li>
             <li>
-              <Link to="/template2">Template 2</Link>
+              <Link to="/placements-table">Placements Table</Link>
             </li>
             <li>
-              <Link to="/template3">Template 3</Link>
+              <Link to="/internship">Internship</Link>
             </li>
             <li>
-              <Link to="/template4">Template 4</Link>
+              <Link to="/internship-table">Internship Table</Link>
             </li>
             <li>
-              <Link to="/template5">Template 5</Link>
+              <Link to="/pli">Pli</Link>
+            </li>
+            <li>
+              <Link to="/pli-table">Pli Table</Link>
+            </li>
+            <li>
+              <Link to="/infrastructure-booking">Infrastructure Booking</Link>
+            </li>
+            <li>
+              <Link to="/duty-chart">Duty Chart</Link>
             </li>
           </ul>
         </nav>
 
-        {/* Routes for each template */}
+        {/* Routes for each component */}
         <Routes>
-          <Route path="/template1" element={<Placements />} />
-          <Route path="/template2" element={<Internship />} />
-          <Route path="/template3" element={<Pli />} />
-          <Route path="/template4" element={<InfrastuctureBooking />} />
-          <Route path="/template5" element={<DutyChart />} />
+          <Route path="/placements" element={<Placements />} />
+          <Route path="/placements-table" element={<PlacementsTable />} />
+          <Route path="/internship" element={<Internship />} />
+          <Route path="/internship-table" element={<InternshipTable />} />
+          <Route path="/pli" element={<Pli />} />
+          <Route path="/pli-table" element={<PliTable />} />
+          <Route
+            path="/infrastructure-booking"
+            element={<InfrastructureBooking />}
+          />
+          <Route path="/duty-chart" element={<DutyChart />} />
         </Routes>
       </div>
     </Router>
