@@ -9,6 +9,7 @@ import PlacementsTable from "./Components/PlacementsTable";
 import InternshipTable from "./Components/InternshipTable";
 import PliTable from "./Components/PliTable";
 import InfrastructureBooking from "./Components/InfrastuctureBooking";
+import Training from "./Components/Training";
 
 const App = () => {
   return (
@@ -41,6 +42,9 @@ const App = () => {
             <li>
               <Link to="/duty-chart">Duty Chart</Link>
             </li>
+            <li>
+              <Link to="/training">Training Notice</Link>
+            </li>
           </ul>
         </nav>
 
@@ -57,6 +61,7 @@ const App = () => {
             element={<InfrastructureBooking />}
           />
           <Route path="/duty-chart" element={<DutyChart />} />
+          <Route path="/training" element={<Training />} />
         </Routes>
       </div>
     </Router>
